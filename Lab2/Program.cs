@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 
 namespace Lab2
@@ -15,6 +16,7 @@ namespace Lab2
         /// <param name="args"> Список аргументов командной строки</param>
         static void Main(string[] args)
         {
+            Trace.WriteLine("Start tracing Lab2");
             Console.WriteLine("Welcome to Lab2");
             Console.WriteLine("Write path to input file: ");
             string inputFilePath = Console.ReadLine();
@@ -23,6 +25,7 @@ namespace Lab2
 
             try
             {
+                Trace.WriteLine("Reading input file %s", inputFilePath);
                 inputLines = File.ReadAllLines(inputFilePath);
             }
             catch (Exception e)
@@ -36,7 +39,9 @@ namespace Lab2
             foreach (string inputLine in inputLines) {
                 try
                 {
+                    Trace.WriteLine("Parsing software from line %s", inputLine);
                     softwares.Add(parser.parseSoftware(inputLine));
+                    Trace.WriteLine("Successfully parsed software from line %s", inputLine);
                 } catch (FormatException e) {
                     Console.WriteLine($"An error occured while parsing input file {inputFilePath}: {e.Message}.");
                 }
@@ -55,12 +60,14 @@ namespace Lab2
                         break;
                     case ConsoleKey.D1:
                         Console.WriteLine("Listing all software");
+                        Trace.WriteLine("Listing software");
                         foreach (Software software in softwares) {
                             software.printInfo();
                         }
                         break;
                     case ConsoleKey.D2:
                         Console.WriteLine("Listing available software");
+                        Trace.WriteLine("Listing available software");
                         foreach (Software software in softwares) {
                             if (software.isAvailable(DateTime.Now)) {
                                 software.printInfo();
@@ -72,6 +79,7 @@ namespace Lab2
             }
 
             Console.WriteLine("End");
+            Trace.WriteLine("End of tracing Lab2");
         }
     }
 }
