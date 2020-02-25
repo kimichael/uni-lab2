@@ -1,5 +1,7 @@
 ﻿using System;
 
+/// <summary>
+/// Класс коммерческого ПО</summary>
 public class CommercialSoftware : Software
 {
     String name;

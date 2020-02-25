@@ -1,5 +1,7 @@
 ﻿using System;
 
+/// <summary>
+/// Класс условно-бесплатного ПО</summary>
 public class FreemiumSoftware : Software
 {
     String name;

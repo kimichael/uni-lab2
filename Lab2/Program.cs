@@ -4,8 +4,15 @@ using System.IO;
 
 namespace Lab2
 {
+    /// <summary>
+    /// Класс, отвечающий за вторую лабораторную работу по ТРПО
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// Точка входа для приложения.
+        /// </summary>
+        /// <param name="args"> Список аргументов командной строки</param>
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Lab2");

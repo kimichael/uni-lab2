@@ -1,5 +1,7 @@
 ﻿using System;
 
+/// <summary>
+/// Класс бесплатного ПО</summary>
 public class FreeSoftware : Software
 {
     private String name;

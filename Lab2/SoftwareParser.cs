@@ -1,12 +1,18 @@
 ﻿using System;
 namespace Lab2
 {
+    /// <summary>
+    /// Парсер, который используется для парсинга ПО
+    /// </summary>
     public class SoftwareParser
     {
         public SoftwareParser()
         {
         }
 
+        /// <summary>
+        /// Метод для парсинга строки с информацией о ПО</summary>
+        /// <returns>Объект ПО, который был распарсен</returns>
         public Software parseSoftware(String line) {
             string[] tokens = line.Split();
 
@@ -22,6 +28,10 @@ namespace Lab2
             }
         }
 
+        /// <summary>
+        /// Метод для парсинга строки с бесплатным ПО</summary>
+        /// <param name="tokens">Набор токенов для парсинга</param>
+        /// <returns>Объект ПО, который был распарсен</returns>
         private FreeSoftware parseFreeSoftware(string[] tokens) {
             if (tokens.Length >= 2) {
                 return new FreeSoftware(tokens[1], tokens[2]);
@@ -29,6 +39,10 @@ namespace Lab2
             throw new FormatException("Wrong free software line format");
         }
 
+        /// <summary>
+        /// Метод для парсинга строки с условно-бесплатным ПО</summary>
+        /// <param name="tokens">Набор токенов для парсинга</param>
+        /// <returns>Объект ПО, который был распарсен</returns>
         private FreemiumSoftware parseFreemiumSoftware(string[] tokens) {
             if (tokens.Length >= 5) {
                 string name = tokens[1];
@@ -41,6 +55,10 @@ namespace Lab2
             throw new FormatException("Wrong freemium software line format");
         }
 
+        /// <summary>
+        /// Метод для парсинга строки с коммерческим ПО</summary>
+        /// <param name="tokens">Набор токенов для парсинга</param>
+        /// <returns>Объект ПО, который был распарсен</returns>
         private CommercialSoftware parseCommercialSoftware(string[] tokens) {
             if (tokens.Length >= 6)
             {
