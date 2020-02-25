@@ -54,6 +54,7 @@ namespace Lab2
             bool done = false;
             while (!done) {
                 ConsoleKeyInfo command = Console.ReadKey(true);
+                Trace.WriteLine("User pressed %s key", command.Key.ToString());
                 switch (command.Key) {
                     case ConsoleKey.Escape:
                         done = true;
