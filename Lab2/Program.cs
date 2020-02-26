@@ -54,12 +54,12 @@ namespace Lab2
             }
 
             Console.WriteLine("Parsing completed.");
-            Console.WriteLine("Press 1 to list all software, 2 to list available software, 3 to write to xml file");
-            Console.WriteLine("Press ESC to stop");
 
             bool done = false;
             while (!done)
             {
+                Console.WriteLine("Press 1 to list all software, 2 to list available software, 3 to write to xml file");
+                Console.WriteLine("Press ESC to stop");
                 ConsoleKeyInfo command = Console.ReadKey(true);
                 Trace.WriteLine("User pressed %s key", command.Key.ToString());
                 switch (command.Key)
@@ -89,6 +89,7 @@ namespace Lab2
                     case ConsoleKey.D3:
                         Console.WriteLine("Enter output file: ");
                         string output = Console.ReadLine();
+                        Trace.WriteLine("Trying to read output file %s", output);
                         WriteToFile(output, softwares);
                         break;
                 }
