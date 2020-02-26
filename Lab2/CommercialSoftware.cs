@@ -1,18 +1,21 @@
 ﻿using System;
+using System.Xml.Serialization;
 
 /// <summary>
 /// Класс коммерческого ПО</summary>
 public class CommercialSoftware : Software
 {
-    String name;
+    public String name { get; set; }
 
-    String manufacturer;
+    public String manufacturer { get; set; }
 
-    double cost;
+    public double cost { get; set; }
 
-    DateTime installationDate;
+    public DateTime installationDate { get; set; }
 
-    TimeSpan usageInterval;
+    public TimeSpan usageInterval { get; set; }
+
+    public CommercialSoftware() { }
 
     public CommercialSoftware(
         String name,

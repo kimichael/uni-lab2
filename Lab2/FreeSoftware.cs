@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Xml.Serialization;
 
 /// <summary>
 /// Класс бесплатного ПО</summary>
 public class FreeSoftware : Software
 {
-    private String name;
+    public String name { get; set; }
 
-    private String manufacturer;
+    public String manufacturer { get; set; }
+
+    public FreeSoftware() { }
 
     public FreeSoftware(String name, String manufacturer)
     {

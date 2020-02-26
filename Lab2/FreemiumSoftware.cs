@@ -1,16 +1,19 @@
 ﻿using System;
+using System.Xml.Serialization;
 
 /// <summary>
 /// Класс условно-бесплатного ПО</summary>
 public class FreemiumSoftware : Software
 {
-    String name;
+    public String name { get; set; }
 
-    String manufacturer;
+    public String manufacturer { get; set; }
 
-    DateTime installationDate;
+    public DateTime installationDate { get; set; }
 
-    TimeSpan freeUsageInterval;
+    public TimeSpan freeUsageInterval { get; set; }
+
+    public FreemiumSoftware() { }
 
     public FreemiumSoftware(
         String name,
